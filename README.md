@@ -1,6 +1,5 @@
 # Müşteri Yorumu Analizi — Hangi Şikâyet Puanı Düşürüyor?
 
-**Ders:** Veri Madenciliği ve İş Zekası · **Öğretim üyesi:** Mustafa Çağın Arslan · Vize projesi
 
 > **Proje raporu:** [`PROJE_RAPORU.pdf`](PROJE_RAPORU.pdf) — analiz raporu, müşteri gereksinimleri,
 > fonksiyonel ve genel gereksinimler, use case diyagramı, kabul kriterleri ve test case'ler.
