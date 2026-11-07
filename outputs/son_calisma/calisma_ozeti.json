@@ -1,0 +1,84 @@
+{
+  "kaynak": "csv",
+  "etiketleyici": "hazir",
+  "sentetik": false,
+  "temizlik": {
+    "ham": 3000,
+    "silinen_kisisel_sutunlar": [],
+    "bos": 0,
+    "gecersiz_puan": 0,
+    "tekrar": 0,
+    "kisa": 0,
+    "temiz": 3000
+  },
+  "dogrulama": null,
+  "metrikler": {
+    "birlesik": {
+      "kapsam": "birlesik",
+      "n_egitim": 2400,
+      "n_test": 600,
+      "dusuk_puan_orani": 0.5,
+      "roc_auc": 0.9218333333333333,
+      "roc_auc_temel_model": 0.5261722222222222,
+      "f1_dusuk_puan": 0.8844221105527639,
+      "mcfadden_r2": 0.5784255681472317,
+      "tn": 267,
+      "fp": 33,
+      "fn": 36,
+      "tp": 264,
+      "yakinsadi": true,
+      "kabul_AC09": true
+    },
+    "giyim": {
+      "kapsam": "giyim",
+      "n_egitim": 1200,
+      "n_test": 300,
+      "dusuk_puan_orani": 0.5,
+      "roc_auc": 0.8999333333333333,
+      "roc_auc_temel_model": 0.58,
+      "f1_dusuk_puan": 0.8598726114649682,
+      "mcfadden_r2": 0.51518945367825,
+      "tn": 121,
+      "fp": 29,
+      "fn": 15,
+      "tp": 135,
+      "yakinsadi": true,
+      "kabul_AC09": true
+    },
+    "elektronik": {
+      "kapsam": "elektronik",
+      "n_egitim": 1200,
+      "n_test": 300,
+      "dusuk_puan_orani": 0.5,
+      "roc_auc": 0.9246666666666666,
+      "roc_auc_temel_model": 0.5266666666666666,
+      "f1_dusuk_puan": 0.9142857142857143,
+      "mcfadden_r2": 0.6403121996627471,
+      "tn": 148,
+      "fp": 2,
+      "fn": 22,
+      "tp": 128,
+      "yakinsadi": true,
+      "kabul_AC09": true
+    }
+  },
+  "cikan_konular": {
+    "birlesik": {},
+    "giyim": {
+      "kargo_hasar": "yetersiz örnek (n=0)",
+      "satici_iletisim": "yetersiz örnek (n=7)",
+      "iade_iptal": "yetersiz örnek (n=8)",
+      "ariza_calismama": "yetersiz örnek (n=0)",
+      "garanti_servis": "yetersiz örnek (n=0)"
+    },
+    "elektronik": {
+      "beden_uyum": "yetersiz örnek (n=2)",
+      "fiyat_performans": "yetersiz örnek (n=8)"
+    }
+  },
+  "yuksek_vif": {
+    "birlesik": [],
+    "giyim": [],
+    "elektronik": []
+  }
+}

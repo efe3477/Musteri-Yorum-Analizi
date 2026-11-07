@@ -1,0 +1,63 @@
+# Müşteri Yorumu Analizi — proje ayarları
+# Tüm modüller bu dosyayı okur. Değerleri buradan değiştirin, koda dokunmayın.
+
+seed: 42
+
+kategoriler: [giyim, elektronik]
+siteler: [trendyol, hepsiburada]
+
+temizlik:
+  min_yorum_uzunlugu: 10        # bu karakter sayısından kısa yorumlar ana veriden ayrılır
+  kisisel_veri_sutunlari:       # varsa silinir (KVKK)
+    - kullanici_adi
+    - kullanici
+    - user
+    - username
+    - profil
+    - profil_url
+    - email
+
+hedef:
+  dusuk_puan_max: 2             # puan <= 2  -> dusuk_puan = 1
+  yuksek_puan_min: 4            # puan >= 4  -> dusuk_puan = 0
+  uc_yildiz: cikar              # cikar | sifir  (3 yıldız ana modelden çıkarılır; duyarlılık için 'sifir')
+
+# Kapalı konu listesi. LLM yalnızca bu kodlardan seçer.
+konular:
+  kargo_gecikme: "Teslimat geç geldi"
+  kargo_hasar: "Ürün kargoda hasar gördü (ezik, kırık, yırtık geldi)"
+  paketleme: "Paketleme yetersiz / özensiz"
+  urun_kalite: "Malzeme, işçilik veya dayanıklılık kötü"
+  beden_uyum: "Beden, ölçü, kalıp uymadı (çoğunlukla giyim)"
+  aciklama_uyumsuz: "Ürün açıklama veya fotoğraftan farklı"
+  eksik_yanlis_urun: "Eksik parça ya da yanlış ürün gönderildi"
+  satici_iletisim: "Satıcı ilgisiz, yanıt vermiyor, kaba"
+  iade_iptal: "İade, iptal veya para iadesi sorunu"
+  fiyat_performans: "Fiyatına değmiyor"
+  ariza_calismama: "Ürün arızalı, çalışmıyor, kısa sürede bozuldu (çoğunlukla elektronik)"
+  garanti_servis: "Garanti, teknik servis veya destek sorunu (çoğunlukla elektronik)"
+
+llm:
+  saglayici: anthropic          # anthropic | openai
+  model: claude-haiku-5-5       # openai kullanırsanız kendi model adınızı yazın
+  grup_boyutu: 20               # tek istekte gönderilen yorum sayısı
+  max_deneme: 3                 # şemaya uymayan yanıtta TOPLAM deneme sayısı (ilk istek dahil)
+  api_max_deneme: 5             # API hatasında (zaman aşımı, istek limiti) toplam deneme
+  api_bekleme_sn: 5             # API hatasında bekleme: 5, 10, 20, 40 sn; sürerse durur,
+                                # yeniden çalıştırınca kaldığı gruptan devam eder (NFR-03)
+  sicaklik: 0
+  max_token: 4000
+
+model:
+  test_orani: 0.2
+  min_konu_sayisi: 10           # eğitim setinde bu kadar örneği olmayan konu o kapsamın modelinden çıkarılır
+  vif_esigi: 5
+  kontroller: [site, satici_var_mi]   # birleşik modelde kategori otomatik eklenir.
+  # log_uzunluk kontrol olarak EKLENMEZ: şikâyet yorumu uzatır (aracı değişken), eklemek
+  # konu etkilerini olduğundan küçük gösterebilir. Duyarlılık analizi: scripts/duyarlilik_analizi.py
+  min_yorum_uyari: 200          # panelde bu sayının altındaki filtrelerde uyarı verilir
+
+scraper:
+  bekleme_sn: 2.5               # istekler arası bekleme (NFR-07: >= 2 sn)
+  zaman_asimi_sn: 15
+  user_agent: "VeriMadenciligiDersProjesi/1.0 (egitim amacli)"

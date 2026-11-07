@@ -1,0 +1,27 @@
+# Gizli bilgiler (NFR-05)
+.env
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# Ham veri (131 MB, GitHub'ın 100 MB dosya sınırını aşar): depoya konmaz.
+# İndirme: README > "Gerçek veri" bölümü. Analiz örneklemi data/processed/ içindedir.
+data/raw/*
+!data/raw/.gitkeep
+
+# Çalışma çıktıları: gerçek sonuçlar (son_calisma) ve sentetik örnek hariç depoya konmaz
+outputs/*
+!outputs/.gitkeep
+!outputs/ornek_calisma/
+!outputs/son_calisma/
+outputs/*/cache/
+
+# Sistem
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

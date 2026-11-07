@@ -1,0 +1,83 @@
+{
+  "kaynak": "csv",
+  "etiketleyici": "kural",
+  "sentetik": true,
+  "temizlik": {
+    "ham": 6180,
+    "silinen_kisisel_sutunlar": [
+      "kullanici_adi"
+    ],
+    "bos": 0,
+    "gecersiz_puan": 0,
+    "tekrar": 161,
+    "kisa": 120,
+    "temiz": 5899
+  },
+  "dogrulama": {
+    "n": 294,
+    "makro_f1": 0.8493343704099517,
+    "ortalama_kappa": 0.8395874512166223,
+    "duygu_kappa": 0.6212131764050421,
+    "kabul_AC06": true
+  },
+  "metrikler": {
+    "birlesik": {
+      "kapsam": "birlesik",
+      "n_egitim": 4145,
+      "n_test": 1037,
+      "dusuk_puan_orani": 0.2593593207255886,
+      "roc_auc": 0.7273297126703842,
+      "roc_auc_temel_model": 0.5159977153035935,
+      "f1_dusuk_puan": 0.5207296849087893,
+      "mcfadden_r2": 0.15080933626036763,
+      "tn": 591,
+      "fp": 177,
+      "fn": 112,
+      "tp": 157,
+      "yakinsadi": true,
+      "kabul_AC09": false
+    },
+    "giyim": {
+      "kapsam": "giyim",
+      "n_egitim": 2081,
+      "n_test": 521,
+      "dusuk_puan_orani": 0.2682551883166795,
+      "roc_auc": 0.6797244094488188,
+      "roc_auc_temel_model": 0.4920884889388826,
+      "f1_dusuk_puan": 0.459546925566343,
+      "mcfadden_r2": 0.1401896128241521,
+      "tn": 283,
+      "fp": 98,
+      "fn": 69,
+      "tp": 71,
+      "yakinsadi": true,
+      "kabul_AC09": false
+    },
+    "elektronik": {
+      "kapsam": "elektronik",
+      "n_egitim": 2064,
+      "n_test": 516,
+      "dusuk_puan_orani": 0.2503875968992248,
+      "roc_auc": 0.7755142920096948,
+      "roc_auc_temel_model": 0.5586503214951025,
+      "f1_dusuk_puan": 0.5576923076923077,
+      "mcfadden_r2": 0.17124693742452268,
+      "tn": 291,
+      "fp": 96,
+      "fn": 42,
+      "tp": 87,
+      "yakinsadi": true,
+      "kabul_AC09": false
+    }
+  },
+  "cikan_konular": {
+    "birlesik": {},
+    "giyim": {},
+    "elektronik": {}
+  },
+  "yuksek_vif": {
+    "birlesik": [],
+    "giyim": [],
+    "elektronik": []
+  }
+}
