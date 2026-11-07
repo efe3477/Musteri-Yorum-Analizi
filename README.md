@@ -193,15 +193,3 @@ pytest -q
 
 Gerçek API ve ağ testleri varsayılan olarak atlanır:
 `LLM_TESTI=1 pytest tests/test_labeler.py -k gercek` · `AG_TESTI=1 URL_LISTESI=urller.csv pytest -k gercek_ag`
-
-## GitHub'a yükleme
-
-```bash
-cd musteri-yorum-analizi
-git init && git add . && git commit -m "Vize projesi: müşteri yorumu analizi"
-git branch -M main
-git remote add origin https://github.com/<kullanici>/musteri-yorum-analizi.git
-git push -u origin main
-```
-`.env` ve `data/raw/` `.gitignore`'dadır; anahtarınız ve ham veriniz yüklenmez.
-Depo her push'ta testleri GitHub Actions ile otomatik çalıştırır (`.github/workflows/testler.yml`).
